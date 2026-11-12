@@ -3,7 +3,7 @@
 ## Candidate
 - **Name:** Nikhil Mutreja
 - **Assignment chosen:** A (Data: Interaction Ledger & Reporting Pipeline)
-- **Time spent (honest estimate):** ~7 hours
+- **Time spent (honest estimate):** ~6 hours
 
 ## How to run
 ```bash
