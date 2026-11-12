@@ -148,7 +148,7 @@ For any call:
 
 ## Testing
 
-Comprehensive test suite covering 71 unit and integration tests across 11 test modules:
+Comprehensive test suite covering 72 unit and integration tests across 12 test modules:
 - `test_phone_normalisation.py`: 6 valid format variations, 11 invalid phone conditions, and phone masking.
 - `test_date_normalisation.py`: 4 date formats, leap year validation, impossible date rejections, naive IST parsing, and midnight boundary handling.
 - `test_lead_validation.py`: Header alias mapping, missing required fields, schema order precedence, currency/decimal parsing, and enum case-insensitivity.
@@ -158,6 +158,7 @@ Comprehensive test suite covering 71 unit and integration tests across 11 test m
 - `test_effective_disposition.py`: Single/multiple sets, single/multiple overrides, out-of-order overrides, unknown dispositions, and tie-breaking.
 - `test_lead_buckets.py`: All 4 lead buckets and their exact precedence hierarchy (`yet_to_reach_out` -> `completed` -> `in_progress_telephony_failed` -> `in_progress_dialed`).
 - `test_reporting.py`: Exact CSV headers, decimal formatting (`0.0000`), masked phone numbers, ISO-8601 IST timestamps, and JSON quality contract.
+- `test_integration.py`: End-to-end multi-drop lifecycle (drop 1 leads & events, cross-drop orphan resolution in drop 2, override propagation, and full report generation).
 - `test_idempotency.py`: Re-ingesting drops produces identical database state and counters without inflation.
 - `test_security.py`: Verifies AES-256-GCM ciphertext nonces, HMAC determinism, and absence of plaintext PII in database columns and rejection logs.
 
@@ -167,7 +168,7 @@ Comprehensive test suite covering 71 unit and integration tests across 11 test m
 - **Drop 1 Ingestion**: 4.1s
 - **Drop 2 Ingestion**: 3.6s
 - **Report Generation (all 5 reports)**: 0.8s
-- **Full Test Suite (71 tests)**: 0.31s
+- **Full Test Suite (72 tests)**: 0.29s
 
 ### Data Quality Summary (Seed 42)
 ```json

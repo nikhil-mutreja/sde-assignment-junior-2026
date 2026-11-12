@@ -27,7 +27,7 @@
    When displaying the data quality statistics table via Rich, `missing_required:phone` was automatically rendered as `missing_required☎` because `:phone:` matched Rich's default emoji shortcode parser. I fixed this by disabling markup in the console table print.
 
 ## How I verified AI-generated code
-- **71 Unit and Integration Tests**: Ran comprehensive pytest suites covering edge cases in phone normalisation, date parsing, duplicate merging, effective dispositions, lead buckets, idempotency, and security.
+- **72 Unit and Integration Tests**: Ran comprehensive pytest suites covering edge cases in phone normalisation, date parsing, duplicate merging, effective dispositions, lead buckets, idempotency, multi-drop integration, and security.
 - **Ruff Strict Verification**: Verified all code with `ruff check .` and `ruff format --check .`.
 - **End-to-End Multi-Drop Ingestion**: Executed complete runs on small-scale datasets with both seed 42 and seed 99, inspecting the resulting CSV reports and verifying row counts, decimal formatting, and sorting.
 - **Security Inspections**: Inspected SQLite database tables directly to confirm that customer names and phone numbers were encrypted and that no plaintext PII leaked into `rejections.csv` or logs.
